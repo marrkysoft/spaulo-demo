@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaulo Esthetic Salon | Orlando, FL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #3d3d3d;
+            --accent: #bfa268;
+            --accent-light: #d4c49a;
+            --cream: #faf8f5;
+            --white: #ffffff;
+            --light-gray: #f5f3f0;
+            --text-gray: #6b6560;
+            --border: #e8e4df;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--white);
+            color: var(--primary);
+            line-height: 1.7;
+            font-weight: 400;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-style: italic;
+            text-transform: none;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .call-btn {
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            padding: 0.7rem 1.4rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid var(--accent);
+            transition: all 0.4s ease;
+            white-space: nowrap;
+        }
+
+        .call-btn:hover {
+            background: var(--primary);
+            color: var(--accent);
+            border-color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--primary);
+            padding: 0.3rem;
+        }
+
+        /* ===== HERO SLIDER ===== */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            background: var(--primary);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1.2s ease, visibility 1.2s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            background-color: #2a2520;
+        }
+
+        .slide-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(26,26,26,0.93) 0%, rgba(26,26,26,0.65) 50%, rgba(26,26,26,0.35) 100%);
+        }
+
+        .slide-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .slide-content {
+            color: var(--white);
+            max-width: 520px;
+        }
+
+        .slide-tag {
+            display: inline-block;
+            color: var(--accent-light);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            padding-left: 45px;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .slide-tag::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 30px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .slide h2 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            line-height: 1.1;
+        }
+
+        .slide p {
+            font-size: 0.95rem;
+            opacity: 0.75;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .slide-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-light);
+            margin-bottom: 1.8rem;
+        }
+
+        .slide-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            padding: 0.95rem 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            border: 2px solid var(--accent);
+            white-space: nowrap;
+        }
+
+        .slide-cta:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .slide-cta svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .slide-image {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-image img {
+            width: 100%;
+            max-width: 380px;
+            height: 460px;
+            object-fit: cover;
+            border: 6px solid rgba(191,162,104,0.25);
+            display: block;
+            background: #3a3530;
+        }
+
+        /* Slider controls */
+        .slider-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            z-index: 10;
+            background: rgba(26,26,26,0.6);
+            padding: 0.6rem 1.5rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .slider-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .dot.active {
+            background: var(--accent);
+            transform: scale(1.3);
+        }
+
+        .slider-progress {
+            width: 80px;
+            height: 2px;
+            background: rgba(255,255,255,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .slide-counter {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        .slide-counter span {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        /* ===== MARQUEE ===== */
+        .marquee-section {
+            background: var(--primary);
+            padding: 1rem 0;
+            overflow: hidden;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-item {
+            color: rgba(255,255,255,0.25);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            white-space: nowrap;
+            padding: 0 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .marquee-item::after {
+            content: '✦';
+            color: var(--accent);
+            font-size: 0.5rem;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            padding: 5rem 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-label {
+            color: var(--accent);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        .about h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .about-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
+            white-space: nowrap;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+
+        .stars {
+            color: var(--accent);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            flex-shrink: 0;
+        }
+
+        .rating-text {
+            color: var(--text-gray);
+            font-size: 0.8rem;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+
+        .about p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            max-width: 580px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.9;
+        }
+
+        .about-divider {
+            width: 40px;
+            height: 1px;
+            background: var(--accent);
+            margin: 2rem auto 0;
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            background: var(--cream);
+            padding: 5rem 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 550px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            border: 1px solid var(--border);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+            background: #e8e4df;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+            display: block;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.06);
+        }
+
+        .service-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(26,26,26,0.35) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover .service-image::after {
+            opacity: 1;
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.35rem 0.9rem;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 2;
+            white-space: nowrap;
+        }
+
+        .service-info {
+            padding: 1.4rem;
+        }
+
+        .service-category {
+            color: var(--accent);
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.4rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.82rem;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .service-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border);
+            gap: 0.5rem;
+        }
+
+        .service-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        .service-btn {
+            background: none;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem 1.1rem;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-family: 'Montserrat', sans-serif;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .service-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* ===== FEATURES ===== */
+        .features {
+            padding: 5rem 1.5rem;
+            background: var(--white);
+        }
+
+        .features-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.8rem 1.2rem;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+        }
+
+        .feature-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1.2rem;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--accent);
+        }
+
+        .feature-item h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            color: var(--text-gray);
+            font-size: 0.78rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* ===== TESTIMONIAL ===== */
+        .testimonial {
+            background: var(--primary);
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        .testimonial-inner {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .testimonial-label {
+            color: var(--accent);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .testimonial blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            color: var(--white);
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .testimonial-author {
+            color: var(--accent-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            background: var(--cream);
+            padding: 5rem 1.5rem;
+        }
+
+        .contact-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info > p {
+            color: var(--text-gray);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: 0.9rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .contact-detail-icon {
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+            color: var(--accent);
+        }
+
+        .contact-detail-text h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-detail-text p,
+        .contact-detail-text a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .contact-detail-text a:hover {
+            color: var(--accent);
+        }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.85rem;
+        }
+
+        .hours-list .day {
+            color: var(--text-gray);
+            font-weight: 400;
+        }
+
+        .hours-list .time {
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .contact-card-panel {
+            background: var(--white);
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .contact-card-panel h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-card-panel > p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 1.8rem;
+            font-weight: 300;
+        }
+
+        .big-cta {
+            display: block;
+            width: 100%;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            padding: 1.1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            border: 2px solid var(--accent);
+            transition: all 0.4s ease;
+            margin-bottom: 0.8rem;
+            white-space: nowrap;
+        }
+
+        .big-cta:hover {
+            background: var(--primary);
+            color: var(--accent);
+            border-color: var(--primary);
+        }
+
+        .big-cta-outline {
+            display: block;
+            width: 100%;
+            background: transparent;
+            color: var(--primary);
+            text-decoration: none;
+            padding: 1.1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            border: 2px solid var(--primary);
+            transition: all 0.4s ease;
+            white-space: nowrap;
+        }
+
+        .big-cta-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.3);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.75rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        footer span {
+            color: var(--accent);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .slide-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .slide-content {
+                margin: 0 auto;
+                max-width: 500px;
+            }
+
+            .slide-image {
+                display: none;
+            }
+
+            .slide h2 {
+                font-size: 2.2rem;
+            }
+
+            .slide-tag {
+                padding-left: 0;
+            }
+
+            .slide-tag::before {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a:not(.call-btn) {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-slider {
+                height: 500px;
+            }
+
+            .slide h2 {
+                font-size: 1.7rem;
+            }
+
+            .slide p {
+                font-size: 0.85rem;
+            }
+
+            .slide-price {
+                font-size: 1.4rem;
+            }
+
+            .slide-cta {
+                padding: 0.8rem 1.6rem;
+                font-size: 0.7rem;
+            }
+
+            .slider-controls {
+                gap: 1rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .slider-progress {
+                width: 50px;
+            }
+
+            .about {
+                padding: 3rem 1.2rem;
+            }
+
+            .about h2,
+            .section-header h2,
+            .contact-info h2 {
+                font-size: 1.8rem;
+            }
+
+            .services {
+                padding: 3rem 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .service-image {
+                height: 220px;
+            }
+
+            .features {
+                padding: 3rem 1.2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .feature-item {
+                padding: 1.5rem 1rem;
+            }
+
+            .testimonial {
+                padding: 3rem 1.2rem;
+            }
+
+            .testimonial blockquote {
+                font-size: 1.3rem;
+            }
+
+            .contact {
+                padding: 3rem 1.2rem;
+            }
+
+            .contact-card-panel {
+                padding: 1.8rem;
+            }
+
+            .contact-detail {
+                gap: 0.8rem;
+            }
+
+            .contact-detail-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+
+            .marquee-item {
+                font-size: 0.8rem;
+                padding: 0 1.5rem;
+                gap: 1.5rem;
+            }
+
+            .about-rating {
+                white-space: nowrap;
+            }
+
+            .stars {
+                font-size: 0.9rem;
+            }
+
+            .rating-text {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            .call-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.6rem;
+            }
+
+            .slide h2 {
+                font-size: 1.4rem;
+            }
+
+            .about h2,
+            .section-header h2,
+            .contact-info h2 {
+                font-size: 1.5rem;
+            }
+
+            .service-footer {
+                flex-wrap: wrap;
+            }
+
+            .service-btn {
+                width: 100%;
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="logo">Spaulo <span>Esthetic Salon</span></div>
+            <nav class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="tel:4077292934" class="call-btn">Call Now</a>
+            </nav>
+            <button class="mobile-menu-btn">&#9776;</button>
+        </div>
+    </header>
+
+    <!-- HERO SLIDER -->
+    <section class="hero-slider" id="heroSlider">
+        <!-- Slide 1: Organic Keratin Treatment -->
+        <div class="slide active">
+            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1400&q=80');"></div>
+            <div class="slide-inner">
+                <div class="slide-content">
+                    <div class="slide-tag">Most Popular</div>
+                    <h2>Organic Keratin Treatment</h2>
+                    <p>Transform frizzy, damaged hair into silky, smooth perfection with our signature organic formula. Loved by hundreds of Orlando clients.</p>
+                    <div class="slide-price">From $95</div>
+                    <a href="tel:4077292934" class="slide-cta">
+                        Book Appointment
+                        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                    </a>
+                </div>
+                <div class="slide-image">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Keratin Treatment">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Balayage -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1400&q=80');"></div>
+            <div class="slide-inner">
+                <div class="slide-content">
+                    <div class="slide-tag">Trending Now</div>
+                    <h2>Balayage Highlights</h2>
+                    <p>Sun-kissed, natural-looking color hand-painted by our expert stylists. Seamless blending for a radiant, dimensional look.</p>
+                    <div class="slide-price">From $150</div>
+                    <a href="tel:4077292934" class="slide-cta">
+                        Book Appointment
+                        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                    </a>
+                </div>
+                <div class="slide-image">
+                    <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d7a169?w=600&q=80" alt="Balayage">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Hair Color -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1527799820374-dcf8d9d7a169?w=1400&q=80');"></div>
+            <div class="slide-inner">
+                <div class="slide-content">
+                    <div class="slide-tag">Client Favorite</div>
+                    <h2>Professional Hair Color</h2>
+                    <p>Vibrant, long-lasting color customized to your skin tone and personal style. From subtle tones to bold transformations.</p>
+                    <div class="slide-price">From $60</div>
+                    <a href="tel:4077292934" class="slide-cta">
+                        Book Appointment
+                        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                    </a>
+                </div>
+                <div class="slide-image">
+                    <img src="https://images.unsplash.com/photo-1580618864180-f03d2e754c5c?w=600&q=80" alt="Hair Color">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Beautox Treatment -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1580618864180-f03d2e754c5c?w=1400&q=80');"></div>
+            <div class="slide-inner">
+                <div class="slide-content">
+                    <div class="slide-tag">Signature Service</div>
+                    <h2>Beautox Hair Treatment</h2>
+                    <p>Deep conditioning treatment that repairs, hydrates, and restores brilliant shine in just 2 hours. Your hair deserves this.</p>
+                    <div class="slide-price">From $95</div>
+                    <a href="tel:4077292934" class="slide-cta">
+                        Book Appointment
+                        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                    </a>
+                </div>
+                <div class="slide-image">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4e4b58a09b4a?w=600&q=80" alt="Beautox Treatment">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Women's Haircut -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1622286342621-4e4b58a09b4a?w=1400&q=80');"></div>
+            <div class="slide-inner">
+                <div class="slide-content">
+                    <div class="slide-tag">Essential Care</div>
+                    <h2>Women's Haircut & Style</h2>
+                    <p>Precision cut tailored to your face shape, hair texture, and lifestyle. Wash and blow-dry included with every service.</p>
+                    <div class="slide-price">From $25</div>
+                    <a href="tel:4077292934" class="slide-cta">
+                        Book Appointment
+                        <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+                    </a>
+                </div>
+                <div class="slide-image">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Haircut">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <div class="slider-dots">
+                <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+                <button class="dot" data-index="1" aria-label="Slide 2"></button>
+                <button class="dot" data-index="2" aria-label="Slide 3"></button>
+                <button class="dot" data-index="3" aria-label="Slide 4"></button>
+                <button class="dot" data-index="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="slider-progress">
+                <div class="slider-progress-bar" id="progressBar"></div>
+            </div>
+            <div class="slide-counter"><span id="currentSlide">01</span> / 05</div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-item">Organic Keratin</div>
+            <div class="marquee-item">Balayage</div>
+            <div class="marquee-item">Hair Color</div>
+            <div class="marquee-item">Beautox Treatment</div>
+            <div class="marquee-item">Women's Haircut</div>
+            <div class="marquee-item">Full Highlights</div>
+            <div class="marquee-item">Organic Keratin</div>
+            <div class="marquee-item">Balayage</div>
+            <div class="marquee-item">Hair Color</div>
+            <div class="marquee-item">Beautox Treatment</div>
+            <div class="marquee-item">Women's Haircut</div>
+            <div class="marquee-item">Full Highlights</div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <span class="about-label">About Us</span>
+        <div class="about-rating">
+            <span class="stars">⭐⭐⭐⭐⭐</span>
+            <span class="rating-text">5.0 Rating &middot; 239+ Reviews</span>
+        </div>
+        <h2>Orlando's Trusted Hair Destination</h2>
+        <p>Located in the heart of Orlando on Gatlin Avenue, Spaulo Esthetic Salon (also known as Impression Salon by Paulo Disdier) is celebrated for outstanding organic keratin treatments and personalized hair services. Our experienced stylists bring your vision to life with precision, care, and artistry.</p>
+        <div class="about-divider"></div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <span class="section-label">What We Offer</span>
+            <h2>Our Services</h2>
+            <p>Professional hair care tailored to your unique style, hair type, and beauty goals.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4e4b58a09b4a?w=600&q=80" alt="Women's Haircut">
+                    <span class="service-badge">Popular</span>
+                </div>
+                <div class="service-info">
+                    <div class="service-category">Haircut</div>
+                    <h3>Women's Haircut</h3>
+                    <p>Wash and precision cut included. Styled to suit your face shape and hair texture perfectly.</p>
+                    <div class="service-footer">
+                        <span class="service-price">$25+</span>
+                        <a href="tel:4077292934" class="service-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d7a169?w=600&q=80" alt="Hair Color">
+                    <span class="service-badge">Favorite</span>
+                </div>
+                <div class="service-info">
+                    <div class="service-category">Color</div>
+                    <h3>Hair Color</h3>
+                    <p>Rich, vibrant color customized to complement your skin tone and personal style.</p>
+                    <div class="service-footer">
+                        <span class="service-price">$60+</span>
+                        <a href="tel:4077292934" class="service-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Organic Keratin">
+                    <span class="service-badge">Signature</span>
+                </div>
+                <div class="service-info">
+                    <div class="service-category">Treatment</div>
+                    <h3>Organic Keratin</h3>
+                    <p>Our most celebrated treatment. Smooths frizz, repairs damage, and adds brilliant shine.</p>
+                    <div class="service-footer">
+                        <span class="service-price">$95+</span>
+                        <a href="tel:4077292934" class="service-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1580618864180-f03d2e754c5c?w=600&q=80" alt="Balayage">
+                    <span class="service-badge">Trending</span>
+                </div>
+                <div class="service-info">
+                    <div class="service-category">Highlights</div>
+                    <h3>Balayage</h3>
+                    <p>Hand-painted highlights for a natural, sun-kissed look with seamless blending.</p>
+                    <div class="service-footer">
+                        <span class="service-price">$150+</span>
+                        <a href="tel:4077292934" class="service-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Beautox">
+                    <span class="service-badge">Repair</span>
+                </div>
+                <div class="service-info">
+                    <div class="service-category">Treatment</div>
+                    <h3>Beautox Treatment</h3>
+                    <p>Deep repair and hydration treatment that restores softness and shine in 2 hours.</p>
+                    <div class="service-footer">
+                        <span class="service-price">$95+</span>
+                        <a href="tel:4077292934" class="service-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c95e361c?w=600&q=80" alt="Full Highlights">
+                </div>
+                <div class="service-info">
+                    <div class="service-category">Highlights</div>
+                    <h3>Full Highlights</h3>
+                    <p>Complete dimension and brightness throughout your hair for a bold, fresh transformation.</p>
+                    <div class="service-footer">
+                        <span class="service-price">$105+</span>
+                        <a href="tel:4077292934" class="service-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="section-header">
+            <span class="section-label">Why Choose Us</span>
+            <h2>The Spaulo Difference</h2>
+            <p>Numbers and values that reflect our commitment to excellence.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">&#9733;</div>
+                <h4>239+ Five-Star Reviews</h4>
+                <p>Our clients consistently rate us 5 stars for quality, service, and results.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">&#9829;</div>
+                <h4>5.0 Average Rating</h4>
+                <p>Across Booksy, Google, and other platforms, we maintain a perfect score.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">&#10003;</div>
+                <h4>6+ Years of Trust</h4>
+                <p>Serving the Orlando community with dedication and consistent excellence.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">&#9822;</div>
+                <h4>100% Client Focused</h4>
+                <p>Every cut, color, and treatment is personalized to your unique needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="testimonial">
+        <div class="testimonial-inner">
+            <span class="testimonial-label">Client Love</span>
+            <blockquote>"The organic keratin treatment completely transformed my hair. I have been coming to Spaulo for over a year and would not trust anyone else in Orlando with my hair."</blockquote>
+            <div class="testimonial-author">A Happy Client &middot; Orlando, FL</div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <div class="contact-info">
+                <span class="section-label">Get In Touch</span>
+                <h2>Visit Spaulo Esthetic Salon</h2>
+                <p>Walk-ins are always welcome. We recommend booking ahead for color and treatment services to guarantee your preferred time.</p>
+
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">&#9873;</div>
+                    <div class="contact-detail-text">
+                        <h4>Location</h4>
+                        <p>101 Gatlin Ave, Suites 122<br>Orlando, FL 32806</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">&#9743;</div>
+                    <div class="contact-detail-text">
+                        <h4>Phone</h4>
+                        <a href="tel:4077292934">(407) 729-2934</a>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">&#9851;</div>
+                    <div class="contact-detail-text">
+                        <h4>Hours</h4>
+                        <ul class="hours-list">
+                            <li><span class="day">Tuesday - Saturday</span><span class="time">9:00 AM - 6:00 PM</span></li>
+                            <li><span class="day">Monday & Sunday</span><span class="time">Closed</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-card-panel">
+                <h3>Ready to Transform Your Hair?</h3>
+                <p>Book your appointment today and experience the Spaulo difference.</p>
+                <a href="tel:4077292934" class="big-cta">Call (407) 729-2934</a>
+                <a href="https://booksy.com/en-us/443466_spaulo-esthetic-salon_hair-salon_134763_orlando" target="_blank" class="big-cta-outline">Book on Booksy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2026 <span>Spaulo Esthetic Salon</span> &middot; 101 Gatlin Ave, Orlando, FL 32806 &middot; (407) 729-2934
+    </footer>
+
+    <script>
+        // ===== SLIDER LOGIC =====
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const progressBar = document.getElementById('progressBar');
+        const currentSlideEl = document.getElementById('currentSlide');
+        let currentSlide = 0;
+        const slideInterval = 6000;
+        let slideTimer;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            currentSlide = index;
+            currentSlideEl.textContent = String(index + 1).padStart(2, '0');
+            resetProgress();
+        }
+
+        function nextSlide() {
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
+
+        function resetProgress() {
+            progressBar.style.transition = 'none';
+            progressBar.style.width = '0%';
+            void progressBar.offsetWidth;
+            progressBar.style.transition = `width ${slideInterval}ms linear`;
+            progressBar.style.width = '100%';
+        }
+
+        function startSlider() {
+            slideTimer = setInterval(nextSlide, slideInterval);
+            resetProgress();
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideTimer);
+                showSlide(parseInt(dot.dataset.index));
+                startSlider();
+            });
+        });
+
+        startSlider();
+
+        // ===== SCROLL ANIMATIONS =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.service-card, .feature-item, .contact-detail').forEach((el, i) => {
+            el.style.opacity = '0';
+            el.classList.add('delay-' + ((i % 3) + 1));
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
