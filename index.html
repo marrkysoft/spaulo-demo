@@ -9,8 +9,9 @@
         :root {
             --primary: #1a1a1a;
             --secondary: #3d3d3d;
-            --accent: #bfa268;
-            --accent-light: #d4c49a;
+            --accent: #c9a84c;
+            --accent-bright: #e8d5a0;
+            --accent-shine: #f5ebc8;
             --cream: #faf8f5;
             --white: #ffffff;
             --light-gray: #f5f3f0;
@@ -198,7 +199,7 @@
 
         .slide-tag {
             display: inline-block;
-            color: var(--accent-light);
+            color: var(--accent-shine);
             font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -228,17 +229,18 @@
 
         .slide p {
             font-size: 0.95rem;
-            opacity: 0.75;
+            opacity: 0.85;
             margin-bottom: 1.5rem;
             font-weight: 300;
             line-height: 1.8;
+            color: rgba(255,255,255,0.85);
         }
 
         .slide-price {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--accent-light);
+            color: var(--accent-bright);
             margin-bottom: 1.8rem;
         }
 
@@ -284,7 +286,7 @@
             max-width: 380px;
             height: 460px;
             object-fit: cover;
-            border: 6px solid rgba(191,162,104,0.25);
+            border: 6px solid rgba(201,168,76,0.25);
             display: block;
             background: #3a3530;
         }
@@ -344,7 +346,7 @@
         }
 
         .slide-counter {
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.6);
             font-size: 0.7rem;
             font-weight: 500;
             letter-spacing: 2px;
@@ -352,16 +354,16 @@
         }
 
         .slide-counter span {
-            color: var(--accent);
+            color: var(--accent-bright);
             font-size: 0.9rem;
         }
 
         /* ===== MARQUEE ===== */
         .marquee-section {
             background: var(--primary);
-            padding: 1rem 0;
+            padding: 1.2rem 0;
             overflow: hidden;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(201,168,76,0.15);
         }
 
         .marquee-track {
@@ -371,23 +373,25 @@
         }
 
         .marquee-item {
-            color: rgba(255,255,255,0.25);
+            color: var(--accent-shine);
             font-family: 'Cormorant Garamond', serif;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 0.95rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             white-space: nowrap;
             padding: 0 2.5rem;
             display: flex;
             align-items: center;
             gap: 2.5rem;
+            text-shadow: 0 0 20px rgba(201,168,76,0.3);
         }
 
         .marquee-item::after {
             content: '✦';
             color: var(--accent);
-            font-size: 0.5rem;
+            font-size: 0.6rem;
+            text-shadow: 0 0 10px rgba(201,168,76,0.5);
         }
 
         @keyframes marquee {
@@ -518,7 +522,7 @@
             height: 240px;
             overflow: hidden;
             position: relative;
-            background: #e8e4df;
+            background: linear-gradient(135deg, #e8e4df 0%, #d4cfc8 100%);
         }
 
         .service-image img {
@@ -708,15 +712,16 @@
         .testimonial blockquote {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.7rem;
-            color: var(--white);
+            color: var(--accent-shine);
             font-style: italic;
             line-height: 1.5;
             margin-bottom: 1.5rem;
             font-weight: 400;
+            text-shadow: 0 0 30px rgba(201,168,76,0.15);
         }
 
         .testimonial-author {
-            color: var(--accent-light);
+            color: var(--accent-bright);
             font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -884,7 +889,7 @@
         /* ===== FOOTER ===== */
         footer {
             background: var(--primary);
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.4);
             text-align: center;
             padding: 2rem 1.5rem;
             font-size: 0.75rem;
@@ -1132,7 +1137,7 @@
     <section class="hero-slider" id="heroSlider">
         <!-- Slide 1: Organic Keratin Treatment -->
         <div class="slide active">
-            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1400&q=80');"></div>
+            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1595476108010-b068d9ec0a44?w=1400&q=80');"></div>
             <div class="slide-inner">
                 <div class="slide-content">
                     <div class="slide-tag">Most Popular</div>
@@ -1145,7 +1150,7 @@
                     </a>
                 </div>
                 <div class="slide-image">
-                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Keratin Treatment">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b068d9ec0a44?w=600&q=80" alt="Keratin Treatment">
                 </div>
             </div>
         </div>
@@ -1165,14 +1170,14 @@
                     </a>
                 </div>
                 <div class="slide-image">
-                    <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d7a169?w=600&q=80" alt="Balayage">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c95e361c?w=600&q=80" alt="Balayage">
                 </div>
             </div>
         </div>
 
         <!-- Slide 3: Hair Color -->
         <div class="slide">
-            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1527799820374-dcf8d9d7a169?w=1400&q=80');"></div>
+            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1562322140-1baeb625f7be?w=1400&q=80');"></div>
             <div class="slide-inner">
                 <div class="slide-content">
                     <div class="slide-tag">Client Favorite</div>
@@ -1185,7 +1190,7 @@
                     </a>
                 </div>
                 <div class="slide-image">
-                    <img src="https://images.unsplash.com/photo-1580618864180-f03d2e754c5c?w=600&q=80" alt="Hair Color">
+                    <img src="https://images.unsplash.com/photo-1562322140-1baeb625f7be?w=600&q=80" alt="Hair Color">
                 </div>
             </div>
         </div>
@@ -1212,7 +1217,7 @@
 
         <!-- Slide 5: Women's Haircut -->
         <div class="slide">
-            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1622286342621-4e4b58a09b4a?w=1400&q=80');"></div>
+            <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=1400&q=80');"></div>
             <div class="slide-inner">
                 <div class="slide-content">
                     <div class="slide-tag">Essential Care</div>
@@ -1225,7 +1230,7 @@
                     </a>
                 </div>
                 <div class="slide-image">
-                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Haircut">
+                    <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=600&q=80" alt="Haircut">
                 </div>
             </div>
         </div>
@@ -1286,7 +1291,7 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1622286342621-4e4b58a09b4a?w=600&q=80" alt="Women's Haircut">
+                    <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=600&q=80" alt="Women's Haircut">
                     <span class="service-badge">Popular</span>
                 </div>
                 <div class="service-info">
@@ -1302,7 +1307,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d7a169?w=600&q=80" alt="Hair Color">
+                    <img src="https://images.unsplash.com/photo-1562322140-1baeb625f7be?w=600&q=80" alt="Hair Color">
                     <span class="service-badge">Favorite</span>
                 </div>
                 <div class="service-info">
@@ -1318,7 +1323,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Organic Keratin">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b068d9ec0a44?w=600&q=80" alt="Organic Keratin">
                     <span class="service-badge">Signature</span>
                 </div>
                 <div class="service-info">
@@ -1334,7 +1339,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1580618864180-f03d2e754c5c?w=600&q=80" alt="Balayage">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c95e361c?w=600&q=80" alt="Balayage">
                     <span class="service-badge">Trending</span>
                 </div>
                 <div class="service-info">
@@ -1350,7 +1355,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Beautox">
+                    <img src="https://images.unsplash.com/photo-1580618864180-f03d2e754c5c?w=600&q=80" alt="Beautox">
                     <span class="service-badge">Repair</span>
                 </div>
                 <div class="service-info">
@@ -1366,7 +1371,7 @@
 
             <div class="service-card">
                 <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c95e361c?w=600&q=80" alt="Full Highlights">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80" alt="Full Highlights">
                 </div>
                 <div class="service-info">
                     <div class="service-category">Highlights</div>
